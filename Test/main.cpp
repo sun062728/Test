@@ -29,6 +29,11 @@
 #include "constexpr.h"
 #include "data_type.h"
 #include "initialization.h"
+#include "decltype.h"
+#include "range_for.h"
+#include "iterator.h"
+#include "tuple.h"
+#include "bitset.h"
 
 void main()
 {
@@ -42,9 +47,14 @@ void main()
 	//TestException test_exception; test_exception.DoTest();
 	//TestCast cast; cast.DoTest();
 	TestTemplate::TestTemplate tplt; tplt.DoTest();
-	TestConstexpr::TestConstexpr ce; ce.DoTest();
-	TestDataType::DoTest();
+	//TestConstexpr::TestConstexpr ce; ce.DoTest();
+	//TestDataType::DoTest();
 	TestInitialization::DoTest();
+	//TestDecltype::DoTest();
+	//TestRangeFor::DoTest();
+	TestIterator::DoTest();
+	//TestTuple::DoTest();
+	TestBitset::DoTest();
 
 	return;
 }

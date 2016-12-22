@@ -119,6 +119,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,17 +150,23 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bitset.h" />
     <ClInclude Include="cast.h" />
     <ClInclude Include="const.h" />
     <ClInclude Include="constexpr.h" />
     <ClInclude Include="data_type.h" />
+    <ClInclude Include="decltype.h" />
     <ClInclude Include="exception.h" />
+    <ClInclude Include="friend.h" />
     <ClInclude Include="initialization.h" />
+    <ClInclude Include="iterator.h" />
     <ClInclude Include="noncopyable.h" />
+    <ClInclude Include="range_for.h" />
     <ClInclude Include="rvalue_ref.h" />
     <ClInclude Include="shared_ptr.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="template.h" />
+    <ClInclude Include="tuple.h" />
     <ClInclude Include="unique_ptr.h" />
     <ClInclude Include="vector.h" />
     <ClInclude Include="weak_ptr.h" />

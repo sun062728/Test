@@ -1,16 +1,16 @@
 #pragma once
 
-class TestVector final
-{
-public:
-	TestVector() {}
-	TestVector(const TestVector &) = delete;
-	TestVector(TestVector &&) = delete;
-	~TestVector() {}
-	TestVector operator=(TestVector const &) = delete;
-	TestVector operator=(TestVector &&) = delete;
-	void DoTest()
-	{
-		auto f = []() {return 1; };
+#include <vector>
+#include <iterator>
+
+namespace TestVector {
+	// reference is not object
+	// so vector of reference doesn't exist
+	// --- c++ primer 5th p87
+	void test_vector_of_ref() {
+		//std::vector<int&> ref_vec; // pointer to reference is illegal
 	}
-};
+	void DoTest() {
+		void test_vector_of_ref();
+	}
+}
