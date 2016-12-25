@@ -80,5 +80,11 @@
     <ClInclude Include="friend.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sequential_container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

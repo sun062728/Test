@@ -58,7 +58,7 @@ public:
 	void TestCircularReference() {
 		struct Node
 		{
-			Node(std::string name) { this->name = name; }
+			Node(const std::string name) { this->name = name; }
 			~Node() { std::cout << "Node " << name.c_str() << "'s dtor" << std::endl; }
 			std::shared_ptr<Node> prev;
 			std::shared_ptr<Node> next;

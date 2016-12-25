@@ -34,10 +34,11 @@
 #include "iterator.h"
 #include "tuple.h"
 #include "bitset.h"
+#include "inline.h"
 
 void main()
 {
-	//TestVector v; v.DoTest();
+	TestVector::DoTest();
 	//TestRvalueRef rr; rr.DoTest();
 	//TestSingleton s; s.DoTest();
 	//TestSharedPtr sp; sp.DoTest();
@@ -54,7 +55,8 @@ void main()
 	//TestRangeFor::DoTest();
 	TestIterator::DoTest();
 	//TestTuple::DoTest();
-	TestBitset::DoTest();
+	//TestBitset::DoTest();
+	//TestInline::DoTest();
 
 	return;
 }

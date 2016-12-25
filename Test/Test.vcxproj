@@ -159,10 +159,12 @@
     <ClInclude Include="exception.h" />
     <ClInclude Include="friend.h" />
     <ClInclude Include="initialization.h" />
+    <ClInclude Include="inline.h" />
     <ClInclude Include="iterator.h" />
     <ClInclude Include="noncopyable.h" />
     <ClInclude Include="range_for.h" />
     <ClInclude Include="rvalue_ref.h" />
+    <ClInclude Include="sequential_container.h" />
     <ClInclude Include="shared_ptr.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="template.h" />
