@@ -35,10 +35,11 @@
 #include "tuple.h"
 #include "bitset.h"
 #include "inline.h"
+#include "algorithm.h"
 
 void main()
 {
-	TestVector::DoTest();
+	//TestVector::DoTest();
 	//TestRvalueRef rr; rr.DoTest();
 	//TestSingleton s; s.DoTest();
 	//TestSharedPtr sp; sp.DoTest();
@@ -57,6 +58,7 @@ void main()
 	//TestTuple::DoTest();
 	//TestBitset::DoTest();
 	//TestInline::DoTest();
+	TestAlgorithm::DoTest();
 
 	return;
 }
