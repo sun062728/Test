@@ -89,5 +89,14 @@
     <ClInclude Include="algorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="lambda.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="filesystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

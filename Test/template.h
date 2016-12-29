@@ -5,12 +5,15 @@
 #include <string.h>
 
 namespace TestTemplate {
-	//template <typename T>
-	//inline int compare(T const &i1, T const &i2) {
-	//	if (i1 < i2) return -1;
-	//	if (i1 > i2) return 1;
-	//	return 0;
-	//}
+	template<typename IT, typename PRE>
+	inline int count(IT beg, IT end, PRE pre) {
+		int count = 0;
+		for (IT it = beg; it != end; it++) {
+			if (pre(*it))
+				count++;
+		}
+		return count;
+	}
 
 	template <typename T>
 	inline int compare(T const &i1, T const &i2) {
@@ -53,6 +56,12 @@ namespace TestTemplate {
 		void DoTest() {
 			test_function_template();
 			test_nontype_param();
+
+			std::vector<int> ivec{ 0,1,2,3,4,5,5,6,7,7,8,8 };
+			auto numSeven = ::TestTemplate::count(ivec.begin(), ivec.end(), [](int i)->bool {
+				return i == 7;
+			});
+
 		}
 	};
 }

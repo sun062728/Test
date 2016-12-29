@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm.h" />
+    <ClInclude Include="bind.h" />
     <ClInclude Include="bitset.h" />
     <ClInclude Include="cast.h" />
     <ClInclude Include="const.h" />
@@ -158,10 +159,12 @@
     <ClInclude Include="data_type.h" />
     <ClInclude Include="decltype.h" />
     <ClInclude Include="exception.h" />
+    <ClInclude Include="filesystem.h" />
     <ClInclude Include="friend.h" />
     <ClInclude Include="initialization.h" />
     <ClInclude Include="inline.h" />
     <ClInclude Include="iterator.h" />
+    <ClInclude Include="lambda.h" />
     <ClInclude Include="noncopyable.h" />
     <ClInclude Include="range_for.h" />
     <ClInclude Include="rvalue_ref.h" />

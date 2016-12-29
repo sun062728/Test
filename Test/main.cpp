@@ -36,6 +36,9 @@
 #include "bitset.h"
 #include "inline.h"
 #include "algorithm.h"
+#include "lambda.h"
+#include "bind.h"
+#include "filesystem.h"
 
 void main()
 {
@@ -51,14 +54,17 @@ void main()
 	TestTemplate::TestTemplate tplt; tplt.DoTest();
 	//TestConstexpr::TestConstexpr ce; ce.DoTest();
 	//TestDataType::DoTest();
-	TestInitialization::DoTest();
+	//TestInitialization::DoTest();
 	//TestDecltype::DoTest();
 	//TestRangeFor::DoTest();
-	TestIterator::DoTest();
+	//TestIterator::DoTest();
 	//TestTuple::DoTest();
 	//TestBitset::DoTest();
 	//TestInline::DoTest();
 	TestAlgorithm::DoTest();
+	TestLambda::DoTest();
+	TestBind::DoTest();
+	//TestFileSystem::DoTest();
 
 	return;
 }
