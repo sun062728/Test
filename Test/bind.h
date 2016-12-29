@@ -8,6 +8,19 @@
 #include <filesystem>
 
 namespace TestBind {
+	class A {
+	public:
+		A():i_(42) {
+			std::cout << "A default ctor" << std::endl;
+		}
+		A(A const &a):i_(a.i_) {
+			std::cout << "A copy ctor" << std::endl;
+		}
+		int get() const { return i_; }
+	private:
+		int i_;
+	};
+
 	bool compare(const std::string &s, int size) {
 		return s.size() >= size;
 	}
@@ -26,7 +39,14 @@ namespace TestBind {
 		std::cout << std::endl;
 	}
 	void test_reference_args() {
-
+		A a;
+		auto passRef = [](A const &ref)->int {return ref.get(); };
+		std::cout << "pass_value" << std::endl;
+		auto pass_value = std::bind(passRef, a); // though passRef 1st arg is a reference, here a is threat as value
+		pass_value();
+		std::cout << "pass_ref" << std::endl;
+		auto pass_ref = std::bind(passRef, std::ref(a));
+		pass_ref();
 	}
 	void DoTest() {
 		test_additional_args();

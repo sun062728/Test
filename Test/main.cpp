@@ -6,14 +6,6 @@
 #include <functional>	// std::function	std::bind
 #include <atomic>		// std::atomic_xxx
 #include <mutex>		// std::mutex		std::lock_guard		std::unique_lock	std::condition_variable
-#include <string>		// std::string
-
-// algorithm
-#include <vector>		// std::vector
-#include <map>			// std::map
-#include <stack>		// std::stack
-#include <queue>		// std::queue
-#include <deque>		// std::deque
 
 // tests
 #include "vector.h"
@@ -39,6 +31,7 @@
 #include "lambda.h"
 #include "bind.h"
 #include "filesystem.h"
+#include "thread.h"
 
 void main()
 {
@@ -65,6 +58,7 @@ void main()
 	TestLambda::DoTest();
 	TestBind::DoTest();
 	//TestFileSystem::DoTest();
+	TestThread::DoTest();
 
 	return;
 }

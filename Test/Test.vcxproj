@@ -172,6 +172,7 @@
     <ClInclude Include="shared_ptr.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="template.h" />
+    <ClInclude Include="thread.h" />
     <ClInclude Include="tuple.h" />
     <ClInclude Include="unique_ptr.h" />
     <ClInclude Include="vector.h" />
