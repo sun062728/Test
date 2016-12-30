@@ -45,16 +45,28 @@ namespace TestAlgorithm {
 		print_svec(svec.cbegin(), svec.cend());
 		std::stable_sort(svec.begin(), svec.end(), isShorter);
 		print_svec(svec.cbegin(), svec.cend());
-
 	}
-	void DoTest() {
+	void test_some_algorithms() {
 		std::vector<std::string> svec{ "the","quick","red","fox","jumps","over","the","slow","red","turtle" };
 		//biggies_5(svec);
 		biggies(svec, 5);
 		int size = 4;
-		auto it = std::find_if(svec.cbegin(),	svec.cend(),
+		auto it = std::find_if(svec.cbegin(), svec.cend(),
 			[size](const std::string &s)->bool {
 			return s.size() >= size; });
-		
+	}
+	// list algorithms should call its member functions
+	void test_list_algorithms() {
+		std::list<int> ilist{35,76,7,3,52,54,36,5,475,4,7};
+		std::list<int> headlist{ 100 };
+		ilist.sort();
+		ilist.remove(475);
+		ilist.splice(ilist.begin(), headlist);
+		ilist.reverse();
+		ilist.unique();
+	}
+	void DoTest() {
+		test_some_algorithms();
+		test_list_algorithms();
 	}
 }
