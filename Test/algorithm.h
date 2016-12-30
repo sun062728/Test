@@ -55,7 +55,6 @@ namespace TestAlgorithm {
 		auto it = std::find_if(svec.cbegin(),	svec.cend(),
 			[size](const std::string &s)->bool {
 			return s.size() >= size; });
-
-
+		
 	}
 }

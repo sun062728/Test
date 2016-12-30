@@ -32,6 +32,7 @@
 #include "bind.h"
 #include "filesystem.h"
 #include "thread.h"
+#include "leetcode.h"
 
 void main()
 {
@@ -50,7 +51,7 @@ void main()
 	//TestInitialization::DoTest();
 	//TestDecltype::DoTest();
 	//TestRangeFor::DoTest();
-	//TestIterator::DoTest();
+	TestIterator::DoTest();
 	//TestTuple::DoTest();
 	//TestBitset::DoTest();
 	//TestInline::DoTest();
@@ -58,7 +59,8 @@ void main()
 	TestLambda::DoTest();
 	TestBind::DoTest();
 	//TestFileSystem::DoTest();
-	TestThread::DoTest();
+	//TestThread::DoTest();
+	//TestLeetCode::DoTest();
 
 	return;
 }
