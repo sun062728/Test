@@ -104,5 +104,8 @@
     <ClInclude Include="leetcode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="associative_container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

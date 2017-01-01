@@ -33,6 +33,7 @@
 #include "filesystem.h"
 #include "thread.h"
 #include "leetcode.h"
+#include "associative_container.h"
 
 void main()
 {
@@ -61,6 +62,7 @@ void main()
 	//TestFileSystem::DoTest();
 	//TestThread::DoTest();
 	//TestLeetCode::DoTest();
+	TestAssociativeContainer::DoTest();
 
 	return;
 }

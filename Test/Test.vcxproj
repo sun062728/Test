@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm.h" />
+    <ClInclude Include="associative_container.h" />
     <ClInclude Include="bind.h" />
     <ClInclude Include="bitset.h" />
     <ClInclude Include="cast.h" />
