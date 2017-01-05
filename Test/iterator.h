@@ -36,7 +36,8 @@ namespace TestIterator {
 		std::istream_iterator<std::string> if_it(ifs);
 		std::istream_iterator<std::string> eof;
 		while (if_it != eof) {
-			std::cout << *if_it++ << std::endl;
+			if_it++;
+			///std::cout << *if_it++ << std::endl;
 		}
 	}
 	void test_reverse_iterator() {

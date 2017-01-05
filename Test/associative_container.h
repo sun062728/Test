@@ -80,7 +80,6 @@ namespace TestAssociativeContainer {
 			do_map(word_head, line.size());
 			std::cout << std::endl;
 		}
-
 	}
 	void DoTest() {
 		test_map();

@@ -34,11 +34,13 @@
 #include "thread.h"
 #include "leetcode.h"
 #include "associative_container.h"
+#include "string.h"
+#include "text_query_prog.h"
 
 void main()
 {
 	//TestVector::DoTest();
-	//TestRvalueRef rr; rr.DoTest();
+	TestRvalueRef::DoTest();
 	//TestSingleton s; s.DoTest();
 	//TestSharedPtr sp; sp.DoTest();
 	//TestUniquePtr up; up.DoTest();
@@ -63,6 +65,8 @@ void main()
 	//TestThread::DoTest();
 	//TestLeetCode::DoTest();
 	TestAssociativeContainer::DoTest();
+	TestString::DoTest();
+	TextQueryProg::DoTest();
 
 	return;
 }

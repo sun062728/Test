@@ -107,5 +107,11 @@
     <ClInclude Include="associative_container.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="text_query_prog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
