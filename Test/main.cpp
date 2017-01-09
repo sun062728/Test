@@ -36,6 +36,8 @@
 #include "associative_container.h"
 #include "string.h"
 #include "text_query_prog.h"
+#include "swap.h"
+#include "copy_control.h"
 
 void main()
 {
@@ -66,7 +68,9 @@ void main()
 	//TestLeetCode::DoTest();
 	TestAssociativeContainer::DoTest();
 	TestString::DoTest();
-	TextQueryProg::DoTest();
+	//TextQueryProg::DoTest();
+	TestSwap::DoTest();
+	TestCopyControl::DoTest();
 
 	return;
 }

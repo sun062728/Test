@@ -54,7 +54,7 @@ namespace TestRvalueRef {
 		Logger a(2);
 		return a;
 	}
-	Logger ReturnInput(Logger l) {
+	Logger ReturnInput(Logger &l) {
 		l.setI(3);
 		return l;
 	}

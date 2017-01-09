@@ -148,7 +148,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="folder.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="message.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm.h" />
@@ -158,6 +160,7 @@
     <ClInclude Include="cast.h" />
     <ClInclude Include="const.h" />
     <ClInclude Include="constexpr.h" />
+    <ClInclude Include="copy_control.h" />
     <ClInclude Include="data_type.h" />
     <ClInclude Include="decltype.h" />
     <ClInclude Include="exception.h" />
@@ -175,6 +178,8 @@
     <ClInclude Include="shared_ptr.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="string.h" />
+    <ClInclude Include="strvec.h" />
+    <ClInclude Include="swap.h" />
     <ClInclude Include="template.h" />
     <ClInclude Include="text_query_prog.h" />
     <ClInclude Include="thread.h" />
@@ -182,6 +187,9 @@
     <ClInclude Include="unique_ptr.h" />
     <ClInclude Include="vector.h" />
     <ClInclude Include="weak_ptr.h" />
+    <ClInclude Include="_folder.h" />
+    <ClInclude Include="_message.h" />
+    <ClInclude Include="_predeclare.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

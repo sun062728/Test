@@ -58,9 +58,24 @@ namespace TestString {
 		}
 	}
 
+	class A {
+	public:
+		A() = default;
+		A(A const &a) {
+			std::cout << "A copy ctor" << std::endl;
+		}
+		A(A &&a) {
+			std::cout << "A move ctor" << std::endl;
+		}
+		void dump() {
+			std::cout << "A::dump" << std::endl;
+		}
+	};
+
 	void DoTest()
 	{
 		test_c_style();
 		test_cpp_style();
+		
 	}
 }
