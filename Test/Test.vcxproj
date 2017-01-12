@@ -171,6 +171,7 @@
     <ClInclude Include="iterator.h" />
     <ClInclude Include="lambda.h" />
     <ClInclude Include="leetcode.h" />
+    <ClInclude Include="move.h" />
     <ClInclude Include="noncopyable.h" />
     <ClInclude Include="range_for.h" />
     <ClInclude Include="rvalue_ref.h" />

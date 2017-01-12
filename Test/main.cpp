@@ -38,6 +38,7 @@
 #include "text_query_prog.h"
 #include "swap.h"
 #include "copy_control.h"
+#include "move.h"
 
 void main()
 {
@@ -71,6 +72,7 @@ void main()
 	//TextQueryProg::DoTest();
 	TestSwap::DoTest();
 	TestCopyControl::DoTest();
+	TestMove::DoTest();
 
 	return;
 }

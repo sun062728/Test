@@ -27,9 +27,11 @@ void Message::printMsg() {
 
 void Message::addFolder(Folder* const p) {
 	folders_.insert(p);
+	p->addMsg(this);
 }
 
 void Message::delFolder(Folder* const p) {
+	p->delMsg(this);
 	folders_.erase(p);
 }
 

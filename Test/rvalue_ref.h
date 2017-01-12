@@ -21,8 +21,7 @@ namespace TestRvalueRef {
 		Logger(int i_) { std::cout << "normal ctor" << std::endl; }
 		~Logger() { std::cout << "dtor" << std::endl; }
 		Logger(Logger const &rhs) { std::cout << "copy ctor" << std::endl; }
-		Logger(Logger &&rhs)
-			:Logger() {
+		Logger(Logger &&rhs) noexcept {
 			swap(*this, rhs);
 			std::cout << "move ctor" << std::endl; 
 		}
@@ -33,7 +32,7 @@ namespace TestRvalueRef {
 			return *this; 
 		}
 		*/
-		Logger & operator=(Logger &&rhs) {
+		Logger & operator=(Logger &&rhs) noexcept {
 			std::cout << "move assignment" << std::endl;
 			swap(*this, rhs);
 			return *this;
@@ -80,21 +79,20 @@ namespace TestRvalueRef {
 		// lvalue_ref
 		int lvalue = 1;
 		int &lvalue_ref = lvalue;
-		int &lvalue_ref2 = lvalue_ref;
-		const int &lvalue_ref_c = 3;
+		//int &lvalue_ref2 = 2;			// lvalue ref cannot be assigned with a rvalue
+		const int &lvalue_ref_c = 3;	// const lvalue ref can be assigned with a rvalue
 
+		// rvalue _ref
 		int &&rvalue_ref = 2;
-		lvalue_ref = rvalue_ref;
-		lvalue_ref = lvalue;
-		const int &const_ref1 = rvalue_ref;
+		//int &&rvalue_ref2 = lvalue;
+		//int &&rvalue_ref2 = rvalue_ref;			// "rvalue_ref" is lvalue expression!!!
+		rvalue_ref = 1;								// as I just said!
 
-		// rvalue_ref
-		//rvalue_ref = lvalue;
-		//int &&rvalue_ref2 = rvalue_ref;
 		// std::move
-		rvalue_ref = std::move(lvalue);
-		const int &const_ref2 = std::move(lvalue);
+		int &&rvalue_ref3 = std::move(lvalue);		// force cast to rvalue
 
+		std::vector<std::string> svec;
+		svec.push_back(std::string(""));
 	}
 	void test_forward() {
 		///int &lvalue_ref = std::forward<int>(1);

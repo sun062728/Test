@@ -12,18 +12,34 @@ namespace TestStrVec {
 	class StrVec {
 	public:
 		StrVec()
-			:elements(nullptr), first_free(nullptr), cap(nullptr) {
+			:elements_(nullptr), first_free_(nullptr), cap_(nullptr) {
 		}
 		StrVec(const StrVec &s) {
 			auto pair = alloc_n_copy(s.begin(), s.end());
-			elements = pair.first;
-			first_free = cap = pair.second;
+			elements_ = pair.first;
+			first_free_ = cap_ = pair.second;
+		}
+		StrVec(StrVec &&r) noexcept {
+			elements_ = r.elements_;
+			cap_ = r.cap_;
+			first_free_ = r.first_free_;
+			r.elements_ = r.cap_ = r.first_free_ = nullptr;
 		}
 		StrVec& operator=(const StrVec &r) {
 			auto pair = alloc_n_copy(r.begin(), r.end());
 			free();
-			elements = pair.first;
-			first_free = cap = pair.second;
+			elements_ = pair.first;
+			first_free_ = cap_ = pair.second;
+			return *this;
+		}
+		StrVec& operator=(StrVec &&r) noexcept {
+			if (this != &r) {
+				free();
+				elements_ = r.elements_;
+				cap_ = r.cap_;
+				first_free_ = r.first_free_;
+				r.elements_ = r.cap_ = r.first_free_ = nullptr;
+			}
 			return *this;
 		}
 		~StrVec() {
@@ -31,19 +47,19 @@ namespace TestStrVec {
 		}
 		void push_back(const std::string &s) {
 			chk_n_alloc();
-			alloc.construct(first_free++, s);
+			alloc.construct(first_free_++, s);
 		}
 		std::size_t size() const {
-			return first_free - elements;
+			return first_free_ - elements_;
 		}
 		std::size_t capacity() const {
-			return cap - elements;
+			return cap_ - elements_;
 		}
 		std::string* begin() const {
-			return elements;
+			return elements_;
 		}
 		std::string* end() const {
-			return first_free;
+			return first_free_;
 		}
 	private:
 		static std::allocator<std::string> alloc;
@@ -57,28 +73,28 @@ namespace TestStrVec {
 			return{ beg, end };
 		}
 		void free() {
-			if (elements) {
-				for (auto it = first_free; it != elements; it--) {
+			if (elements_) {
+				for (auto it = first_free_; it != elements_; it--) {
 					alloc.destroy(it);
 				}
-				alloc.deallocate(elements, cap - elements);
+				alloc.deallocate(elements_, cap_ - elements_);
 			}
 		}
 		void reallocate() {
 			auto new_cap = size() ? size() * 2 : 1;
 			auto new_beg = alloc.allocate(new_cap);
 			auto sz = size();
-			for (auto it = new_beg; elements != first_free; elements++, it++) {
-				alloc.construct(it, std::move(*elements));
+			for (auto it = new_beg; elements_ != first_free_; elements_++, it++) {
+				alloc.construct(it, std::move(*elements_));
 			}
 			free();
-			elements = new_beg;
-			first_free = new_beg + sz;
-			cap = new_beg + new_cap;
+			elements_ = new_beg;
+			first_free_ = new_beg + sz;
+			cap_ = new_beg + new_cap;
 		}
-		std::string *elements;
-		std::string *first_free;
-		std::string *cap;
+		std::string *elements_;
+		std::string *first_free_;
+		std::string *cap_;
 	};
 	void DoTest() {
 
