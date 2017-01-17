@@ -5,16 +5,34 @@
 #include <string>
 
 namespace TestLambda {
-	// lambda should better be considered as function object
+	class ReturnInt {
+	public:
+		ReturnInt(int const &i)
+			:ref_(i) {
+		}
+		int operator()(void) {
+			return ref_;
+		}
+	private:
+		int const &ref_;
+	};
+	// lambda is function object
 	// capture list is stored in object's member variable
 	void test_lambda_size() {
 		std::string s("haha");
 		auto stringSize = sizeof(s);
 
+		auto empty = []()->void{};
 		auto captureValue = [s]()->void {return; };
 		auto captureRef = [&s]()->void {return; };
-		auto size = sizeof(captureValue);
-		size = sizeof(captureRef);
+		auto size = sizeof(empty);
+		size = sizeof(captureValue);
+		size = sizeof(captureRef);		// capture 1 ref, size is 4
+
+		int ci = 1;
+		ReturnInt op(ci);
+		int ret = op();
+		size = sizeof(op);				// functor with 1 ref member, size is 4
 	}
 	void test_lambda_capture() {
 		int a, b, c, d;
@@ -32,6 +50,5 @@ namespace TestLambda {
 	void DoTest() {
 		test_lambda_size();
 		test_lambda_capture();
-
 	}
 }

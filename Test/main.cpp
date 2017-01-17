@@ -39,6 +39,10 @@
 #include "swap.h"
 #include "copy_control.h"
 #include "move.h"
+#include "strvec.h"
+#include "function.h"
+#include "operator.h"
+#include "virtual_function.h"
 
 void main()
 {
@@ -73,6 +77,10 @@ void main()
 	TestSwap::DoTest();
 	TestCopyControl::DoTest();
 	TestMove::DoTest();
+	TestStrVec::DoTest();
+	TestFunction::DoTest();
+	TestOperator::DoTest();
+	TestVirtualFunction::DoTest();
 
 	return;
 }

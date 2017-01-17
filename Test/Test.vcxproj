@@ -90,6 +90,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -166,6 +167,7 @@
     <ClInclude Include="exception.h" />
     <ClInclude Include="filesystem.h" />
     <ClInclude Include="friend.h" />
+    <ClInclude Include="function.h" />
     <ClInclude Include="initialization.h" />
     <ClInclude Include="inline.h" />
     <ClInclude Include="iterator.h" />
@@ -173,6 +175,7 @@
     <ClInclude Include="leetcode.h" />
     <ClInclude Include="move.h" />
     <ClInclude Include="noncopyable.h" />
+    <ClInclude Include="operator.h" />
     <ClInclude Include="range_for.h" />
     <ClInclude Include="rvalue_ref.h" />
     <ClInclude Include="sequential_container.h" />
@@ -187,6 +190,7 @@
     <ClInclude Include="tuple.h" />
     <ClInclude Include="unique_ptr.h" />
     <ClInclude Include="vector.h" />
+    <ClInclude Include="virtual_function.h" />
     <ClInclude Include="weak_ptr.h" />
     <ClInclude Include="_folder.h" />
     <ClInclude Include="_message.h" />

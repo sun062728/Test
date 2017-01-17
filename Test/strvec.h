@@ -69,13 +69,13 @@ namespace TestStrVec {
 		}
 		std::pair<std::string *, std::string *> alloc_n_copy(const std::string *b, const std::string *e) {
 			auto beg = alloc.allocate(e - b);
-			auto end = std::uninitialized_copy(b, e, beg);
+			auto end = std::uninitialized_copy_n(b, e - b, beg);
 			return{ beg, end };
 		}
 		void free() {
 			if (elements_) {
-				for (auto it = first_free_; it != elements_; it--) {
-					alloc.destroy(it);
+				for (auto it = first_free_; it != elements_;) {
+					alloc.destroy(--it);
 				}
 				alloc.deallocate(elements_, cap_ - elements_);
 			}
@@ -84,9 +84,14 @@ namespace TestStrVec {
 			auto new_cap = size() ? size() * 2 : 1;
 			auto new_beg = alloc.allocate(new_cap);
 			auto sz = size();
+			/* 
 			for (auto it = new_beg; elements_ != first_free_; elements_++, it++) {
 				alloc.construct(it, std::move(*elements_));
-			}
+			}*/
+			std::uninitialized_copy_n(
+				std::make_move_iterator(begin()),
+				sz,
+				new_beg);
 			free();
 			elements_ = new_beg;
 			first_free_ = new_beg + sz;
@@ -96,7 +101,11 @@ namespace TestStrVec {
 		std::string *first_free_;
 		std::string *cap_;
 	};
-	void DoTest() {
+	std::allocator<std::string> StrVec::alloc;
 
+	void DoTest() {
+		StrVec svec;
+		svec.push_back("haha");
+		svec.push_back("hehe");
 	}
 }
