@@ -149,5 +149,8 @@
     <ClInclude Include="virtual_function.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="text_query_prog_ch15.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

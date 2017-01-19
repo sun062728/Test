@@ -186,6 +186,7 @@
     <ClInclude Include="swap.h" />
     <ClInclude Include="template.h" />
     <ClInclude Include="text_query_prog.h" />
+    <ClInclude Include="text_query_prog_ch15.h" />
     <ClInclude Include="thread.h" />
     <ClInclude Include="tuple.h" />
     <ClInclude Include="unique_ptr.h" />

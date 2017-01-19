@@ -43,6 +43,7 @@
 #include "function.h"
 #include "operator.h"
 #include "virtual_function.h"
+#include "text_query_prog_ch15.h"
 
 void main()
 {
@@ -81,6 +82,7 @@ void main()
 	TestFunction::DoTest();
 	TestOperator::DoTest();
 	TestVirtualFunction::DoTest();
+	TestTextQueryProgCh15::DoTest();
 
 	return;
 }
