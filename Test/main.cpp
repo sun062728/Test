@@ -44,6 +44,8 @@
 #include "operator.h"
 #include "virtual_function.h"
 #include "text_query_prog_ch15.h"
+#include "partial_template_specialization.hpp"
+#include "placement_new.h"
 
 void main()
 {
@@ -82,7 +84,9 @@ void main()
 	TestFunction::DoTest();
 	TestOperator::DoTest();
 	TestVirtualFunction::DoTest();
-	TestTextQueryProgCh15::DoTest();
-
+	///TestTextQueryProgCh15::DoTest();
+	TestParitalTemplateSpecialization::DoTest();
+	TestPlacementNew::DoTest();
+	
 	return;
 }

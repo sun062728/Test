@@ -272,7 +272,140 @@ namespace TestTextQueryProgCh15 {
 			query_result.print();
 		}
 	}
+	/*
+	namespace TextBook {
+		class QueryResult {
+		public:
+			QueryResult() = default;
+			void print() {
+				std::cout << word_ << " occurs " << total_num_ << " times, in " << line_indices_ptr_->size() << " lines." << std::endl;
+				for (auto &idx : *line_indices_ptr_)
+					std::cout << "\t(line " << idx + 1 << ") " << (*text_)[idx] << std::endl;
+			}
+		private:
+			std::string									word_;
+			std::shared_ptr<std::set<int>>				line_indices_ptr_;
+			std::shared_ptr<std::vector<std::string>>	text_;
+			int											total_num_;
+		};
 
+		class Query_base {
+		public:
+			Query_base() = default;
+			virtual ~Query_base() = default;
+			virtual QueryResult eval() = 0;
+			virtual std::string expr() = 0;
+		};
+
+		class Query_word :public Query_base {
+		public:
+			Query_word(std::string s) {}
+			QueryResult eval() {}
+			std::string expr() {}
+		};
+
+		class Query_not :public Query_base {
+		public:
+		};
+
+		class Query_and : public Query_base {
+		public:
+			Query_and(Query const &l, Query const &r)
+				:l_(l), r_(r) {
+
+			}
+		private:
+			Query l_, r_;
+		};
+
+		class Query_or :public Query_base {
+		public:
+		};
+
+		// query wrapper
+		class Query {
+			friend Query operator&(Query const &l, Query const &r) {
+				Query_and(l, r);
+			}
+		public:
+			Query(std::shared_ptr<Query_base> p)
+				:p_(p) {
+			}
+			QueryResult eval() {
+				return p_->eval();
+			}
+			std::string expr() {
+				return p_->expr();
+			}
+		private:
+			std::shared_ptr<Query_base> p_;		// real query
+		};
+		std::string rip_off_parenthesis(std::string const &s) {
+			//skip_space()
+		}
+		std::string::const_iterator handle_parenthesis(std::string::const_iterator beg, std::string const &word, std::string &o) {
+			std::string::const_reverse_iterator r_it;
+			for (r_it = word.crbegin(); (r_it != word.crend()) && (*r_it != ')'); r_it++) {}
+			if (r_it == word.crend())
+				assert(0);
+			auto end = r_it.base();
+			o.assign(beg + 1, end - 1);
+			return end;
+		}
+		std::string::const_iterator get_operand(std::string::const_iterator beg, std::string const &word, std::string &o, bool &bReverse) {
+			size_t offset = 0;
+			decltype(beg) end;
+			auto word_end = word.cend();
+			beg = skip_space(beg, word_end);
+			if (*beg == '(') {
+				end = handle_parenthesis(beg, word, o);
+			}
+			else if (is_ch(beg)) {
+				end = next_non_ch(beg, word_end);
+				o.assign(beg, end);
+			}
+			else if (*beg == '~') {
+				bReverse = true;
+				if (*(++beg) != '(')
+					assert(0);
+				end = handle_parenthesis(beg, word, o);
+			}
+			else
+				assert(0);
+			return end;
+		}
+		inline decltype(it) skip_space(std::string::const_iterator it, std::string::const_iterator end) {
+			for (; it != end && *it == ' '; it++)
+				;
+			return it;
+		}
+		inline bool is_ch(std::string::const_iterator it) {
+			if ((*it >= 'A' && *it <= 'Z') ||
+				(*it >= 'a' && *it <= 'z'))
+				return true;
+			else
+				return false;
+		}
+		inline decltype(it) next_non_ch(std::string::const_iterator it, decltype(it) end) {
+			for (; it != end&&is_ch(it); it++)
+				;
+			return it;
+		}
+		void parse(std::string const &s = "(fiery & bird) | wind") {
+			auto it = s.cbegin();
+			auto end = s.cend();
+			if ((it = skip_space(it, end)) == end) return;
+			
+			if (*it == '(') {
+				
+			}
+			else if (is_ch(it)) {
+				auto ch_end = next_non_ch(it, end);
+				Query(std::make_shared<Query_base>(new Query_word(std::string(it, end))));
+			}
+		}
+	}
+	*/
 	void DoTest() {
 		MyWay::DoTest();
 	}
