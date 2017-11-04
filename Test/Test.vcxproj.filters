@@ -152,5 +152,11 @@
     <ClInclude Include="text_query_prog_ch15.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="partial_template_specialization.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="placement_new.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

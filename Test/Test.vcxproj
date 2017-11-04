@@ -176,6 +176,8 @@
     <ClInclude Include="move.h" />
     <ClInclude Include="noncopyable.h" />
     <ClInclude Include="operator.h" />
+    <ClInclude Include="partial_template_specialization.hpp" />
+    <ClInclude Include="placement_new.h" />
     <ClInclude Include="range_for.h" />
     <ClInclude Include="rvalue_ref.h" />
     <ClInclude Include="sequential_container.h" />

@@ -59,8 +59,8 @@ private:
 	static SingletonDoubleCheck* instance_;
 	static std::mutex mutex_;
 
-	SingletonDoubleCheck() {}
-	~SingletonDoubleCheck() {}
+	SingletonDoubleCheck() = default;
+	~SingletonDoubleCheck() = default;
 	SingletonDoubleCheck(SingletonDoubleCheck const &) = delete;
 	SingletonDoubleCheck(SingletonDoubleCheck &&) = delete;
 	SingletonDoubleCheck operator=(SingletonDoubleCheck const &) = delete;
